@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-#if DNX451 || NET45 || NET40
+#if NET451 || NET45 || NET40
 using System.Runtime.Caching;
-#elif DNXCORE50
+#elif DOTNET5_4
 using Microsoft.Framework.Caching.Memory;
 #endif
 
@@ -26,7 +26,7 @@ namespace NPoco
         {
             return ObjectCache;
         }
-    #if DNXCORE50
+    #if DOTNET5_4
         static readonly MemoryCache ObjectCache = new MemoryCache(new MemoryCacheOptions());
     #else
         static readonly MemoryCache ObjectCache = new MemoryCache("NPoco");
@@ -71,7 +71,7 @@ namespace NPoco
 
         public TValue Get(TKey key, Func<TValue> factory)
         {
-#if !NET35 && !DNXCORE50 
+#if !NET35 && !DOTNET5_4 
             if (_useManaged)
             {
                 var objectCache = _managedCache.GetCache();

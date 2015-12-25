@@ -9,7 +9,14 @@
     "Newtonsoft.Json": "7.0.1"
   },
   "frameworks": {
-    "dnx451": {
+    "net35": {
+      "frameworkAssemblies": {
+        "System.configuration": "2.0.0.0",
+        "System.Data": "2.0.0.0",
+        "System.XML": "2.0.0.0"
+      }
+    },
+    "net40": {
       "frameworkAssemblies": {
         "System.configuration": "4.0.0.0",
         "System.Data": "4.0.0.0",
@@ -23,28 +30,27 @@
         "System.Data": "4.0.0.0",
         "System.Runtime.Caching": "4.0.0.0",
         "System.XML": "4.0.0.0"
+      },
+      "dependencies": {
+        "System.Collections": "4.0.11-beta-23516"
       }
     },
-    "net40": {
+    "net451": {
       "frameworkAssemblies": {
         "System.configuration": "4.0.0.0",
         "System.Data": "4.0.0.0",
         "System.Runtime.Caching": "4.0.0.0",
         "System.XML": "4.0.0.0"
+      },
+      "dependencies": {
+        "System.Collections": "4.0.11-beta-23516"
       }
     },
-    "net35": {
-      "frameworkAssemblies": {
-        "System.configuration": "2.0.0.0",
-        "System.Data": "2.0.0.0",
-        "System.XML": "2.0.0.0"
-      }
-    },
-    "dnxcore50": {
+    "dotnet5.4": {
       "dependencies": {
         "Microsoft.Framework.Caching.Abstractions": "1.0.0-beta8",
         "Microsoft.Framework.Caching.Memory": "1.0.0-beta8",
-        "System.Collections": "4.0.11-beta-23516",
+        "System.Collections": "4.0.11-beta-23409",
         "System.Collections.Specialized": "4.0.1-beta-23516",
         "System.Data.Common": "4.0.1-beta-23516",
         "System.Data.SqlClient": "4.0.0-beta-23516",

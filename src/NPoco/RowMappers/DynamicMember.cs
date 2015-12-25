@@ -31,7 +31,7 @@ namespace NPoco.RowMappers
 //            return val;
 //        }
 
-//#if !DNXCORE50
+//#if !DOTNET5_4
 //        public override Type ReflectedType { get { return DynamicType; } }
 
 //        public override bool IsDefined(Type attributeType, bool inherit)

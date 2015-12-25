@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
-#if !DNXCORE50
+#if !DOTNET5_4
 using FirebirdSql.Data.FirebirdClient;
 #endif
 using NPoco.DatabaseTypes;
@@ -69,7 +69,7 @@ namespace NPoco.Tests.Common
                 case 7: // Postgres
                     Assert.Fail("Database platform not supported for unit testing");
                     return;
-#if !DNXCORE50
+#if !DOTNET5_4
                 case 8: // Firebird
                     TestDatabase = new FirebirdDatabase();
                     var db = new Database(TestDatabase.Connection, new FirebirdDatabaseType(), FirebirdClientFactory.Instance);

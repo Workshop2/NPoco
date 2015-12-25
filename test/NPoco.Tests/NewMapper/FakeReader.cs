@@ -7,7 +7,7 @@ namespace NPoco.Tests.NewMapper
 {
     public class FakeReader : DbDataReader
     {
-#if !DNXCORE50
+#if !DOTNET5_4
         public override void Close()
         {
             throw new NotImplementedException();

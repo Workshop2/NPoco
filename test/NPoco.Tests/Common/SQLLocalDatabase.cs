@@ -30,7 +30,7 @@ namespace NPoco.Tests.Common
             EnsureSharedConnectionConfigured();
 
 //            Console.WriteLine("Tables (Constructor): " + Environment.NewLine);
-//#if !DNXCORE50
+//#if !DOTNET5_4
 //            var dt = ((SqlConnection)Connection).GetSchema("Tables");
 //            foreach (DataRow row in dt.Rows)
 //            {
@@ -201,7 +201,7 @@ namespace NPoco.Tests.Common
             cmd.ExecuteNonQuery();
 
 //            Console.WriteLine("Tables (CreateDB): " + Environment.NewLine);
-//#if !DNXCORE50
+//#if !DOTNET5_4
 //            var dt = conn.GetSchema("Tables");
 //            foreach (DataRow row in dt.Rows)
 //            {

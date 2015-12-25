@@ -23,7 +23,7 @@ namespace NPoco.Tests.Common
             lock (_syncRoot)
             {
 
-#if DNXCORE50
+#if DOTNET5_4
                 Connection = new Microsoft.Data.Sqlite.SqliteConnection(ConnectionString);
 #else
                 Connection = new System.Data.SQLite.SQLiteConnection(ConnectionString);

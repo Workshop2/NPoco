@@ -23,7 +23,7 @@ using System.Threading;
 using NPoco.Expressions;
 using NPoco.FluentMappings;
 using NPoco.Linq;
-#if !DNXCORE50 
+#if !DOTNET5_4 
 using System.Configuration;
 #endif
 
@@ -75,7 +75,7 @@ namespace NPoco
             //    cmd.ExecuteNonQuery();
             //}
         }
-#if !DNXCORE50
+#if !DOTNET5_4
         public Database(string connectionString, string providerName)
             : this(connectionString, providerName, DefaultEnableAutoSelect)
         { }
@@ -134,7 +134,7 @@ namespace NPoco
             _paramPrefix = _dbType.GetParameterPrefix(_connectionString);
         }
 
-#if !DNXCORE50
+#if !DOTNET5_4
         public Database(string connectionStringName)
             : this(connectionStringName, DefaultEnableAutoSelect)
         { }
@@ -1532,7 +1532,7 @@ namespace NPoco
             {
                 if (id == 0 && !string.IsNullOrEmpty(versionName) && VersionException == VersionExceptionHandling.Exception)
                 {
-#if DNXCORE50
+#if DOTNET5_4
                     throw new Exception(string.Format("A Concurrency update occurred in table '{0}' for primary key value(s) = '{1}' and version = '{2}'", tableName, string.Join(",", primaryKeyValuePairs.Values.Select(x => x.ToString()).ToArray()), versionValue));
 #else
                     throw new DBConcurrencyException(string.Format("A Concurrency update occurred in table '{0}' for primary key value(s) = '{1}' and version = '{2}'", tableName, string.Join(",", primaryKeyValuePairs.Values.Select(x => x.ToString()).ToArray()), versionValue));

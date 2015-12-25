@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace NPoco
 {
-#if !DNXCORE50
+#if !DOTNET5_4
     public class SqlBulkCopyHelper
     {
         public static Func<DbConnection, SqlConnection> SqlConnectionResolver = dbConn => (SqlConnection)dbConn;
@@ -26,7 +26,7 @@ namespace NPoco
                 bulkCopy.WriteToServer(table);
             }
         }
-#if NET45 || DNX451
+#if NET45 || NET451
         public static async System.Threading.Tasks.Task BulkInsertAsync<T>(IDatabase db, IEnumerable<T> list, SqlBulkCopyOptions sqlBulkCopyOptions)
         {
             using (var bulkCopy = new SqlBulkCopy(SqlConnectionResolver(db.Connection), sqlBulkCopyOptions, SqlTransactionResolver(db.Transaction)))

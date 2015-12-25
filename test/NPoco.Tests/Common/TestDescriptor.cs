@@ -8,7 +8,7 @@ namespace NPoco.Tests.Common
     {
         public void BeforeTest(ITest test)
         {
-#if DNXCORE50
+#if DOTNET5_4
             Console.WriteLine("Executing {0}.{1}...", test.Method.MethodInfo.DeclaringType.Name, test.Name);
 #else
             Console.Write("Executing...");

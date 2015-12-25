@@ -84,7 +84,7 @@ namespace NPoco.Tests.DecoratedTests.CRUDTests
             Database.Update(poco1);
 
             poco2.Age = 200;
-#if DNXCORE50
+#if DOTNET5_4
             Assert.Throws<Exception>(() => Database.Update(poco2));
 #else
             Assert.Throws<DBConcurrencyException>(() => Database.Update(poco2));
@@ -120,7 +120,7 @@ namespace NPoco.Tests.DecoratedTests.CRUDTests
             Database.Update(poco1);
 
             poco2.Age = 200;
-#if DNXCORE50
+#if DOTNET5_4
             Assert.Throws<Exception>(() => Database.Update(poco2));
 #else
             Assert.Throws<DBConcurrencyException>(() => Database.Update(poco2));
